@@ -6,6 +6,6 @@ for package in ./*.conda; do
 	if conda install -y "$package"; then
 		echo "$package: SUCCESS"
 	else
-		echo "$package: FAILED"
+		echo "$package: FAILED" | tee -a failed_installations.txt
 	fi
 done
